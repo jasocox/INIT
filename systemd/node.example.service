@@ -1,0 +1,14 @@
+[Unit]
+Description=API Server
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+Restart=on-failure
+Environment=NODE_ENV=production
+WorkingDirectory=/opt/service
+ExecStart=/usr/bin/npm run start -- 7000
+
+[Install]
+WantedBy=multi-user.target
